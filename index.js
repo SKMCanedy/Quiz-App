@@ -122,14 +122,13 @@ function startPageString () {
 	console.log (`startPageString function accessed`);
 
 	return `
-		<form id = "startButton">
+		<div id = "startButton">
 			<p><span> Are you a true fan of the Harry Potter movies?</span></p>
 			<p><span> Let&lsquo;s find out&#33;</span></p>
 			<p><span class = "spoilerWarning col-4"> Warning&#33; This quiz may contain spoilers. Do not play if you have not completed the entire series.</span></p>
 			<p><span > Click the button to proceed. </span></p>
 			<button type = "button" class = "startButton"> Alohamora&#33; </button>
-			</div>
-		</form>
+		</div>
 	`;
 }
 
@@ -162,13 +161,34 @@ function getQuestion() {
 	return `
 		<form id = "questionForm">
 			<p><span class = "question"> ${questInsArray[0]} </span></p>
-			<div class = "answerBlock">
-				<div class = "quizDiv"><input type="radio" name="answer" value="answer1" checked ><span id = "ans1"> ${questInsArray[1]} </span></div>
-				<div class = "quizDiv"><input type="radio" name="answer" value="answer2"><span id = "ans2"> ${questInsArray[2]} </span></div>
-				<div class = "quizDiv "><input type="radio" name="answer" value="answer3"><span id = "ans3"> ${questInsArray[3]}</span></div>
-				<div class = "quizDiv "><input type="radio" name="answer" value="answer4"><span id = "ans4"> ${questInsArray[4]} </span></div>
+			<fieldset>
+				<legend>Answers</legend>
+				<div class = "answerBlock">
+					<div class = "quizDiv">
+						<label for = "quizAns1">
+							<input type="radio" id = "quizAns1" name="answer" value="answer1" checked ><span id = "ans1"> ${questInsArray[1]} </span>
+						</label>
+					</div>
+					<div class = "quizDiv">
+						<label for = "quizAns2">
+							<input type="radio" id = "quizAns2" name="answer" value="answer2"><span id = "ans2"> ${questInsArray[2]} </span>
+						</label>
+					</div>
+					<div class = "quizDiv ">
+						<label for = "quizAns3">
+							<input type="radio" id = "quizAns3" name="answer" value="answer3"><span id = "ans3"> ${questInsArray[3]}</span>
+						</label>
+					</div>
+					<div class = "quizDiv ">
+						<label for = "quizAns4">
+							<input type="radio" id = "quizAns4" name="answer" value="answer4"><span id = "ans4"> ${questInsArray[4]} </span>
+						</label>
+					</div>
+				</div>
+			</fieldset>
+			<div class = "submitButton">
+			<button type = "submit" value = "questionForm" class = "questionButton"> Revelio </button>
 			</div>
-			<div class = "submitButton"><button type = "submit" value = "questionForm" class = "questionButton"> Revelio </button></div>
 		</form>
 	`
 }

@@ -46,6 +46,10 @@ h1 {
 	font-size: 32px;
 }
 
+fieldset {
+	border-style: none;
+}
+
 .answerBlock {
 	margin: auto;
 	display: inline-block;
